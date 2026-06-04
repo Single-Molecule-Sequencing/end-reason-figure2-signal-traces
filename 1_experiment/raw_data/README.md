@@ -11,13 +11,10 @@ The raw sequencing data is **not committed to this repo** — the files are larg
 |---|---|
 | **Bulk FAST5** | Contains `IntermediateData/Reads` — raw pA signal + end-reason metadata for every read, as recorded by the sequencer in real time |
 
-## Where it lives
+## Path
 
 ```
-/nfs/turbo/umms-atheylab/gregfar/SMS/SMS_POP_data/
-  Single_Molecule_Seqeuncing_Cutting_Res_E/
-    Regular/
-      20250519_1041_MN48328_AYJ384_c3faa65   ← bulk FAST5
+/nfs/turbo/umms-atheylab/gregfar/SMS/SMS_POP_data/Single_Molecule_Seqeuncing_Cutting_Res_E/Regular/20250519_1041_MN48328_AYJ384_c3faa658/rdlu0053_20250519_1046_AYJ384_MN48328_sequencing_run_Regular_c3faa658_2e5a2515.fast5 
 ```
 
 **Access:** Great Lakes HPC only. Requires active `umms-atheylab` allocation.
@@ -27,6 +24,6 @@ The raw sequencing data is **not committed to this repo** — the files are larg
 The bulk FAST5 format records **real-time sequencer output**, including the
 `IntermediateData` table that stores each read's end reason as assigned by the
 MinKNOW software. This is distinct from per-read FAST5/POD5 files produced after
-basecalling — those don't carry the intermediate signal in the same accessible way.
-We need the bulk FAST5 specifically to extract end-reason assignments alongside
-the raw pA signal for the same read.
+segmentation — those don't carry the complete signal for each channel.
+We need the bulk FAST5 specifically to extract
+the raw signal before, during, and after each read segmentation to provide a complete picture of the signal level behavior of each end reason.
