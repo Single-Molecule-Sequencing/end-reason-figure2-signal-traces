@@ -18,12 +18,9 @@ signal to reads, and where the resulting data files live.
 ## What was the experiment?
 
 This data comes from a **single-molecule sequencing run** on an Oxford Nanopore
-MinION device. The goal was to capture reads spanning multiple end-reason classes
-so we could later visualize what the raw pA signal looks like at the moment each
-type of sequencing termination occurs.
+MinION device. 
 
 The raw signal data is stored in a **bulk FAST5 file**, which contains the
 `IntermediateData` table — this records the raw signal and metadata for every read
 at the time it was processed by the sequencer, including its end reason. This bulk
-FAST5 format is what allows us to extract end-reason assignments directly from the
-sequencer's internal records rather than inferring them post-hoc.
+FAST5 format is what allows us to extract the raw signal before, during, and after the read allowing for a comprehensive picture.
