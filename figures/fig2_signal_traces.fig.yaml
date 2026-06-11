@@ -1,0 +1,18 @@
+id: fig2_signal_traces
+kind: figure
+path: figures/fig2_signal_traces.png
+caption: Raw pA signal traces from representative reads per end-reason class, extracted
+  from a bulk FAST5 file.
+label: fig:fig2_signal_traces
+audiences:
+- preprint
+status: draft
+last_edited: '2026-06-11T17:59:53Z'
+provenance:
+  regenerable: true
+  generated_by: lab-analysis record-run
+  generated_at: '2026-06-11T17:59:52Z'
+  code:
+    script: 'adopted: rendered Figure 2 signal traces'
+    commit: dc27cca5c014999c0052a49560bb593cce375b80
+  env_hash: 9c00029d4cd93f1e

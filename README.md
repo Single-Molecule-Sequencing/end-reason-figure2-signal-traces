@@ -1,5 +1,10 @@
 # End-Reason Figure 2 — Raw Signal Traces by End-Reason Class
 
+<!-- LAB:DASHBOARD-BADGE BEGIN -->
+📊 **[Live dashboard](https://single-molecule-sequencing.github.io/end-reason-figure2-signal-traces/)**
+<!-- LAB:DASHBOARD-BADGE END -->
+
+
 **Paper:** End-reason filtering in single-molecule sequencing of native DNA (Oxford Nanopore)  
 **Figure:** Figure 2  
 **What this shows:** Raw pA electrical signal traces from 10 representative reads per
