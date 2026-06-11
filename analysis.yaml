@@ -1,18 +1,18 @@
 schema_version: 1
 id: end-reason-figure2-signal-traces
-title: "End-Reason Figure 2: raw pA signal traces by end-reason class"
+title: 'End-Reason Figure 2: raw pA signal traces by end-reason class'
 status: exploring
 maturity_tier: 2
 pi: Athey Lab
 experiments: []
 topics:
-  - end-reason
-  - signal-traces
-  - fast5
-summary: >
-  Raw ionic current (pA) signal traces from 10 representative reads per
-  end-reason class, extracted from a bulk FAST5 file. Motivates end-reason
-  filtering by showing visually distinct signal characteristics at termination.
-created: "2026-06-04"
+- end-reason
+- signal-traces
+- fast5
+summary: 'Raw ionic current (pA) signal traces from 10 representative reads per end-reason
+  class, extracted from a bulk FAST5 file. Motivates end-reason filtering by showing
+  visually distinct signal characteristics at termination.
+
+  '
+created: '2026-06-04'
 harvested_by: []
-source_repo: https://github.com/Single-Molecule-Sequencing/analysis-end-reason-fig2-signal-traces
