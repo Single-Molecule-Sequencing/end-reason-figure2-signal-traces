@@ -1,21 +1,16 @@
 # 2. Analysis
 
-This section contains the **code that turns raw data into figures**, along with
-plain-English explanations of what the code does and how to run it.
-
----
-
 ## Contents
-
 | File / Folder | Description |
 |---|---|
-| [`overview.md`](overview.md) | Plain-English walkthrough of the analysis logic (no code) |
-| [`commands.md`](commands.md) | Exact commands to run each script, in order |
-| [`scripts/`](scripts/) | The actual code (Jupyter notebook) |
+| `overview.md` | Plain-English method summary |
+| `commands.md` | Reproducibility commands (local + HPC paths) |
+| `scripts/signal_trace_extraction.ipynb` | Raw extraction/plotting notebook |
+| `scripts/environment.yaml` | Conda environment used for analysis |
+| `scripts/build_result_tables.py` | Regenerates deposited lineage/checksum tables |
+| `scripts/sync_dashboard_preview.py` | Syncs dashboard preview from table-manifested final PNG |
 
-## One-line summary
-
-The analysis opens a bulk FAST5 file, groups the raw signal records by read ID to
-reconstruct each read, assigns each read its end reason (the last recorded row for
-that read), filters by quality score, then selects 10 representative reads per
-end-reason class and plots their raw pA signal traces.
+## Reproducibility stance
+- **Script-regenerable from committed files:** lineage/checksum tables + dashboard preview assets.
+- **Requires raw Turbo data:** notebook rerun from bulk FAST5/BAM.
+- **Requires manual Adobe Illustrator:** final publication layout exports (tracked in `unresolved.json`).

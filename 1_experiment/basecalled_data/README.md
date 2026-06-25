@@ -1,29 +1,12 @@
 # Basecalled Data
 
-Output of running dorado on the raw POD5. Also lives on Turbo — not
-committed to this repo.
+Basecalled BAM used by the analysis notebook (not committed in this repo):
 
----
-
-## What exists
-
-| File type | Description |
-|---|---|
-| **BAM** | Unaligned basecalled reads. Used by the analysis notebook to look up read Q-scores via the `qs` tag. |
-
-## Where it lives
-
-<!-- TODO: Fill in the actual path to the basecalled BAM on Turbo -->
-```
+```text
 /nfs/turbo/umms-atheylab/hrli/Code/dorado-run/Output/20250519_1041_MN48328_AYJ384_c3faa658_sup_v5.2.0_trim1_10.bam
 ```
 
-## How it was produced
+## Usage in this repo
+`2_analysis/scripts/signal_trace_extraction.ipynb` reads this BAM with `pysam` and applies a read-level quality filter (`MIN_Q=10`) using `qs` tags when present.
 
-See [`../dorado_commands.md`](../dorado_commands.md) for the exact commands.
-
-## Notes
-
-The analysis notebook (`2_analysis/scripts/signal_trace_extraction.ipynb`) reads
-the BAM to extract per-read Q-scores. It uses pysam and looks for the `qs` tag
-(dorado's read-level quality score).
+Exact original Dorado CLI invocation is not in committed provenance and is tracked in `../unresolved.json`.

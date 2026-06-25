@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-06-25T20:48:21Z",
+  "repo": "end-reason-figure2-signal-traces",
+  "items": [
+    {
+      "id": "illustrator-final-layout",
+      "category": "manual_edit",
+      "artifact": "3_results/figures/Figure_2_final.ai",
+      "affects": [
+        "3_results/figures/Figure_2_final.pdf",
+        "3_results/figures/Figure_2_final.svg",
+        "3_results/figures/Figure_2_final@4x.png"
+      ],
+      "status": "unresolved",
+      "reason": "Final typography/layout edits and export settings exist only in Illustrator project state; no script captures these operations end-to-end.",
+      "evidence": "Repository contains Figure_2_final.ai and exported assets, but no deterministic Illustrator automation script."
+    },
+    {
+      "id": "dorado-command-line",
+      "category": "missing_provenance",
+      "artifact": "1_experiment/dorado_commands.md",
+      "status": "unresolved",
+      "reason": "Exact Dorado invocation for the referenced BAM was not captured in committed history.",
+      "evidence": "Notebook points to BAM path, but command provenance is absent from repo artifacts."
+    },
+    {
+      "id": "instrument-metadata",
+      "category": "missing_provenance",
+      "artifact": "1_experiment/run_details.md",
+      "status": "unresolved",
+      "reason": "Kit version and MinKNOW version are not present in committed source files.",
+      "evidence": "No run report or metadata export committed in this repo."
+    }
+  ]
+}

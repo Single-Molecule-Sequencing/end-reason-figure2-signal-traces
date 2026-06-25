@@ -1,7 +1,10 @@
 # Happy path — adoption
 
-Minimal commands to reproduce this exploration's key result:
+Minimal commands that reproduce the adoption outputs from committed files:
 
 ```bash
-# TODO: add the command(s) and their record-run calls
+python3 2_analysis/scripts/build_result_tables.py
+python3 2_analysis/scripts/sync_dashboard_preview.py
 ```
+
+Provenance run log: `provenance/runs.jsonl`.

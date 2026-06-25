@@ -1,80 +1,41 @@
-# Commands — How to Run the Analysis
+# Commands — Reproducibility Paths
 
-Run these in order to reproduce the figure from scratch.
+This repo has two supported paths:
 
-> ⚠️ **HPC required.** The raw FAST5 input lives on Turbo and is only accessible
-> from a Great Lakes compute node. Run from a GL allocation
-> (`srun --partition=standard --cpus-per-task=4 --mem=32G --pty bash`).
+1. **Deposited-artifact path (no HPC)**: rebuild lineage/checksum tables and sync dashboard previews from committed files.
+2. **Full raw-data path (HPC)**: re-run bulk FAST5 extraction notebook, then manually re-export Illustrator outputs.
 
----
-
-## 0. Prerequisites
-
-```bash
-# SSH to Great Lakes
-ssh <uniqname>@greatlakes.arc-ts.umich.edu
-
-# Get an interactive allocation (if not already in one)
-srun --partition=standard --cpus-per-task=4 --mem=32G --pty bash
-
-# Activate the lab environment
-conda activate atheylab
-
-# Verify key packages are importable
-python -c "import h5py, vbz_h5py_plugin, pysam, pod5, numpy, matplotlib, pandas; print('All imports OK')"
-```
-
----
-
-## 1. Run the signal extraction notebook
-
-This opens the bulk FAST5, groups reads by end-reason class, filters by Q-score,
-and produces raw matplotlib signal trace panels.
+## A) Deposited-artifact path (fast, local)
 
 ```bash
 cd /path/to/end-reason-figure2-signal-traces
+python3 2_analysis/scripts/build_result_tables.py
+python3 2_analysis/scripts/sync_dashboard_preview.py
+```
 
+Outputs regenerated from deposited artifacts/tables:
+- `3_results/tables/figure2_asset_manifest.csv`
+- `3_results/tables/figure2_notebook_parameters.csv`
+- `3_results/tables/source_table_manifest.csv`
+- `figures/fig2_signal_traces.png`
+- `docs/figures/fig2_signal_traces.png`
+
+## B) Full raw-data path (HPC + manual Illustrator)
+
+```bash
+ssh <uniqname>@greatlakes.arc-ts.umich.edu
+srun --partition=standard --cpus-per-task=4 --mem=32G --pty bash
+conda activate atheylab
+cd /nfs/turbo/umms-atheylab/<path>/end-reason-figure2-signal-traces
 jupyter nbconvert --to notebook --execute \
     2_analysis/scripts/signal_trace_extraction.ipynb \
     --output 2_analysis/scripts/signal_trace_extraction.executed.ipynb
 ```
 
-**Output:** raw signal trace figure files written to `3_results/figures/raw_output/`  
-**Runtime:** ~5–15 minutes depending on FAST5 size and allocation CPUs
-
----
-
-## 2. Record the provenance run
-
-After executing, stamp the run so this figure has a traceable lineage:
-
-```bash
-lab-analysis record-run \
-    --figure fig2_signal_traces \
-    --command "jupyter nbconvert --to notebook --execute 2_analysis/scripts/signal_trace_extraction.ipynb" \
-    --output 3_results/figures/Figure_2_final.pdf \
-    --output 3_results/figures/Figure_2_final.png
-```
-
----
-
-## 3. (Manual) Illustrator refinements
-
-Open `3_results/figures/raw_output/` in Adobe Illustrator, apply final
-typographic/layout refinements, and export as:
+Manual (not currently script-regenerable): open matplotlib output in Illustrator and export:
 - `3_results/figures/Figure_2_final.pdf`
 - `3_results/figures/Figure_2_final.svg`
 - `3_results/figures/Figure_2_final@4x.png`
+- `3_results/figures/Figure_2_final.ai`
 
-Commit the exported files.
-
----
-
-## 4. Verify the happy path
-
-```bash
-# From repo root
-lab-analysis verify-happy-path
-```
-
-See [`HAPPY_PATH.md`](../HAPPY_PATH.md) for the full end-to-end narrative.
+See `unresolved.json` for explicit non-regenerable elements.

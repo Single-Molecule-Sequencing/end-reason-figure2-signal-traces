@@ -1,31 +1,22 @@
 # 3. Results
 
-This section contains the **final, polished outputs** of the analysis: the figure
-as it will appear in the paper, and the figure legend text.
-
----
-
 ## Contents
-
-| File / Folder | Description |
+| Path | Description |
 |---|---|
-| [`figures/`](figures/) | Polished figure files (PDF for print, SVG for editing, PNG for web) |
-| [`figure_legends.md`](figure_legends.md) | Figure legend text as it will appear in the paper |
+| `figures/` | Draft + final figure assets (PDF/SVG/PNG/AI) |
+| `figure_legends.md` | Finalized Figure 2 legend text |
+| `tables/` | Source tables with checksums, parameters, and lineage |
 
-## What Figure 2 shows
+## Source tables with lineage
+- `tables/figure2_asset_manifest.csv`: sha256 + bytes + lineage for each figure asset.
+- `tables/figure2_notebook_parameters.csv`: constants parsed from notebook.
+- `tables/source_table_manifest.csv`: table inventory + regeneration command.
 
-Figure 2 displays raw picoampere (pA) electrical signal traces from 10
-representative Oxford Nanopore reads for each end-reason class. Each panel
-corresponds to one end-reason class. The traces show the raw ionic current
-recorded by the nanopore as the DNA strand translocates, ending at the moment
-the sequencer assigns the read its end-reason classification.
+Regenerate these tables with:
+```bash
+python3 2_analysis/scripts/build_result_tables.py
+```
 
-This figure establishes that the electrical signal has visually distinguishable
-characteristics at termination for different end-reason classes, motivating the
-end-reason filtering analysis developed in the paper.
-
-## Draft status
-
-- **Polished draft date:** 2026-06-03
-- **Illustrator refinements:** Applied ✓
-- **Pending:** Final co-author review before harvest into paper
+## Reproducibility status
+- Final PDF/SVG/PNG/AI files are present and checksummed.
+- Final layout edits are Illustrator-only and documented in `../unresolved.json`.

@@ -1,0 +1,3 @@
+table_path,description,regenerates_with
+3_results/tables/figure2_asset_manifest.csv,Checksums and lineage for final + draft figure assets,python3 2_analysis/scripts/build_result_tables.py
+3_results/tables/figure2_notebook_parameters.csv,Parameters parsed from signal_trace_extraction.ipynb,python3 2_analysis/scripts/build_result_tables.py
