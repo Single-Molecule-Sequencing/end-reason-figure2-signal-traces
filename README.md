@@ -1,5 +1,8 @@
 # End-Reason Figure 2 — Raw Signal Traces by End-Reason Class
 
+> 📄 Companion repository for the **End Reason** Data Descriptor — canonical manuscript: [Single-Molecule-Sequencing/end_reason_6_5_26](https://github.com/Single-Molecule-Sequencing/end_reason_6_5_26).
+
+
 📊 **Live dashboard:** https://sturdy-adventure-925pgyg.pages.github.io/
 
 Companion analysis repo for Figure 2 of the end-reason manuscript.
