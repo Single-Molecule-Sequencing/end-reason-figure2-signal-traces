@@ -3,7 +3,7 @@
 > 📄 Companion repository for the **End Reason** Data Descriptor — canonical manuscript: [Single-Molecule-Sequencing/end_reason_6_5_26](https://github.com/Single-Molecule-Sequencing/end_reason_6_5_26).
 
 
-📊 **Live dashboard:** https://sturdy-adventure-925pgyg.pages.github.io/
+📊 **Live dashboard:** https://rdlu0053.tail46dbe4.ts.net:8464/artifacts/mirror/end-reason-figure2-signal-traces/
 
 Companion analysis repo for Figure 2 of the end-reason manuscript.
 
