@@ -1,6 +1,6 @@
 # End-Reason Figure 2 — Raw Signal Traces by End-Reason Class
 
-> 📄 Companion repository for the **End Reason** Data Descriptor — canonical manuscript: [Single-Molecule-Sequencing/end_reason_6_5_26](https://github.com/Single-Molecule-Sequencing/end_reason_6_5_26).
+> Companion repository for the **End Reason** Data Descriptor (Athey Lab). Canonical manuscript source: `Single-Molecule-Sequencing/end_reason_6_5_26`, currently a private repository, so it is named here rather than linked.
 
 
 📊 **Live dashboard:** https://rdlu0053.tail46dbe4.ts.net:8464/artifacts/mirror/end-reason-figure2-signal-traces/
